@@ -1,0 +1,131 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>D_CRAZY_ART</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f8f8;
+      color: #333;
+    }
+    header {
+      background-color: #fff;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    .lang-toggle {
+      margin-top: 10px;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+    }
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      margin-top: 15px;
+      background: #333;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .upi-section {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .upi-section p {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="title">D_CRAZY_ART</h1>
+    <div class="lang-toggle">
+      <button onclick="setLang('en')">English</button>
+      <button onclick="setLang('hi')">Hindi</button>
+    </div>
+  </header>  <div class="container">
+    <form>
+      <label id="nameLabel">Name</label>
+      <input type="text" name="name" required /><label id="phoneLabel">Phone Number (WhatsApp)</label>
+  <input type="tel" name="phone" required />
+
+  <label id="typeLabel">Sketch Type</label>
+  <select name="sketchType">
+    <option>Portrait</option>
+    <option>Couple</option>
+    <option>Digital Art</option>
+    <option>Pencil Sketch</option>
+    <option>Pet Sketch</option>
+  </select>
+
+  <label id="messageLabel">Message / Description</label>
+  <textarea name="message" rows="4"></textarea>
+
+  <button type="submit" id="submitBtn">Submit Order</button>
+</form>
+
+<div class="upi-section">
+  <p id="upiText">Pay via UPI: <strong>yourupi@bank</strong></p>
+  <!-- You can replace with a QR image if you want -->
+</div>
+
+  </div>  <script>
+    const langContent = {
+      en: {
+        nameLabel: "Name",
+        phoneLabel: "Phone Number (WhatsApp)",
+        typeLabel: "Sketch Type",
+        messageLabel: "Message / Description",
+        submitBtn: "Submit Order",
+        upiText: "Pay via UPI: yourupi@bank"
+      },
+      hi: {
+        nameLabel: "नाम",
+        phoneLabel: "फोन नंबर (WhatsApp)",
+        typeLabel: "स्केच का प्रकार",
+        messageLabel: "संदेश / विवरण",
+        submitBtn: "ऑर्डर भेजें",
+        upiText: "UPI से भुगतान करें: yourupi@bank"
+      }
+    };
+
+    function setLang(lang) {
+      const content = langContent[lang];
+      document.getElementById("nameLabel").innerText = content.nameLabel;
+      document.getElementById("phoneLabel").innerText = content.phoneLabel;
+      document.getElementById("typeLabel").innerText = content.typeLabel;
+      document.getElementById("messageLabel").innerText = content.messageLabel;
+      document.getElementById("submitBtn").innerText = content.submitBtn;
+      document.getElementById("upiText").innerText = content.upiText;
+    }
+  </script></body>
+</html>
